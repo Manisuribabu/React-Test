@@ -1,0 +1,51 @@
+q1.
+var i=[1,2,3,4,5,6,7,8,9,10];
+for( let i=0;i<=10;i++){
+    if(i%2==0){
+        console.log(i);
+    }
+}
+
+
+
+
+q2.
+
+var nums = [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1,1, 0, 1];
+var findMaxConsecutiveOne = function(nums) {
+   let largest = 0;
+    let current = 0;
+    for (let i = 0; i<nums.length; i++) {
+        if(nums[i] === 0){
+            current = 0 
+        }
+        else{
+            current++;
+        } 
+        if (current > largest){
+            largest = current;
+        } 
+    };
+    return largest;
+};
+console.log(findMaxConsecutiveOne(nums));
+
+
+
+
+q3.
+
+  var p =[1,1,2,2,5,6,7,7,8,9,9,10,11,11,];
+let b=[];
+let c=[];
+for(let i=0;i<=p.length;i++)
+{
+   if((b.indexOf(p[i]))===-1){
+        b.push(p[i]);
+        }
+        else{
+            c.push(p[i]);
+        }
+}
+    console.log(c);
+
