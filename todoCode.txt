@@ -1,0 +1,38 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+
+export default function App() {
+  const [list, setList] = React.useState(['apple', 'banna']);
+  const [todo, setTodo] = React.useState('');
+  const handleAdd = () => {
+    if (todo) {
+      setList([...list, todo]);
+    }
+  };
+  const handleInput = e => {
+    setTodo(e.target.value);
+  };
+  return (
+    <div style={{ display: 'inline' }}>
+      <span >Add To DO</span>
+      <input
+       type="text"
+        value={todo}
+        onChange={handleInput}
+      />
+      <button onClick={handleAdd}>Add</button>
+      <div>
+        <span>To Do List </span>
+        <div style={{ background: '#ddd' }}>
+          {list.map(item => (
+            <span style={{ display: 'flex' }}>{item}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
